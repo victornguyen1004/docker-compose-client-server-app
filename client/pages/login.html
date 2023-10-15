@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/f6f851698f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="flex flex-col items-center px-4 md:h-screen lg:px-28">
+        <img src="/images/logo.png" alt="" class="object-cover w-40 mt-2">
+        <div class="my-4 text-2xl font-bold">Login into GGStore</div>
+        <div class="flex w-full flex-col justify-between md:flex-row">
+          <form class="flex-1 p-2 mt-4" onsubmit="handleSubmit(event)">
+            <div class="">
+              <label for="email" class="text-xs font-bold text-zinc-500">
+                EMAIL ADDRESS
+              </label>
+              <input
+                type="email"
+                id="Email"
+                value=""
+                class="mb-4 w-full border-b bg-inherit pt-3 pb-5 focus:border-zinc-600 focus:outline-none"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div class="relative">
+              <label for="password" class="text-xs font-bold text-zinc-500">
+                PASSWORD
+              </label>
+              <input
+                type="password"
+                id="Password"
+                value=""
+                class="mb-8 w-full border-b bg-inherit pr-8 pt-3 pb-5 focus:border-zinc-600 focus:outline-none"
+                placeholder="Password"
+              />
+              <button
+                class="absolute bottom-1/2 right-1 translate-y-2 rounded-full p-1 hover:bg-zinc-300"
+              >
+                <!-- Add your button content here -->
+              </button>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-black py-4  font-semibold text-white duration-300 ease-in-out hover:opacity-80"
+            >
+              LOG IN
+            </button>
+          </form>
+          <!-- DIVIDER -->
+          <div class="my-2 flex h-full flex-col items-center">
+            <div class="hidden h-full w-[1px] bg-zinc-300 md:block"></div>
+            <div class="px-8 py-2 text-xs font-bold text-zinc-500">OR</div>
+            <div class="hidden h-full w-[1px] bg-zinc-300 md:block"></div>
+          </div>
+          <!-- OTHER OPTIONS -->
+          <div class="flex h-full flex-1 flex-col justify-center px-2 md:px-0">
+            <a href="#" class="flex w-full justify-between border border-black p-5" onclick="showInDevelopmentAlert()">
+  <img src="/img/google.png" alt="" class="h-[20px] w-[20px] object-cover" />
+  <div class="font-medium">Continue with Google</div>
+  <div class=""></div>
+</a>
+
+            <a href="#" class="mt-4 flex w-full justify-between border border-black p-5" onclick="showInDevelopmentAlert()">
+  <img src="/img/facebook.png" alt="" class="h-[20px] w-[20px] object-cover" />
+  <div class="font-medium">Continue with Facebook</div>
+  <div class=""></div>
+</a>
+
+          </div>
+        </div>
+        <div class="relative mt-8 flex flex-col justify-center">
+            <div>Don't have an account yet?</div>
+          <a href="/register" class="text-center font-bold underline underline-offset-2 mt-2">Register now
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+    <script src="/js/main.js"></script>
+    <script src="/js/login.js"></script>
+</html>

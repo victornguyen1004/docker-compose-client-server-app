@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/f6f851698f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body onload="init()">
+    <div class="container">
+      <div class="flex flex-col items-center px-4 md:h-screen lg:px-28">
+          <img src="/images/logo.png" alt="" class="object-cover w-40 mt-2 block md:hidden">
+          <div class="flex w-full max-w-[600px] flex-col justify-center bg-white shadow-lg border-2 rounded-2xl p-8 m-12">
+              <div class=" text-2xl font-bold text-center mb-8">Account Info</div>
+              <div class="flex flex-row justify-between w-full py-4 border-b-2"><div class="text-lg font-semibold text-zinc-500">Email</div>
+          <div id="Email" class="text-zinc-600 font-bold text-lg"></div></div>
+          </hr>
+              <div class="flex flex-row justify-between w-full py-4 border-b-2"><div class="text-lg font-semibold text-zinc-500">ID</div>
+          <div id="UserId" class="text-zinc-600 font-bold text-lg"></div></div>
+          </hr><div class="flex flex-row justify-between py-4 w-full"><div class="text-lg font-semibold text-zinc-500">Balance</div>
+          <div id="Balance" class="text-zinc-600 font-bold text-lg"></div></div>
+          </hr>
+          
+          <form class="text-center">
+              <div class="text-zinc-800 font-bold mb-4">INPUT THE AMOUNT</div>
+              <input name="balance" id="AmountInput" type="number" placeholder="0" class="w-40 h-20 text-center focus:outline-none text-4xl border-2 rounded-xl">
+              <div class="flex flex-row mt-4 text-white">
+                  <button id="DepositButton" onclick="deposit(event)" class="w-full mr-2 px-4 py-4 bg-black rounded-xl">DEPOSIT</button>
+                  <button id="WithdrawButton" onclick="withdraw(event)" class="w-full px-4 py-4 bg-black rounded-xl">WITHDRAW</button>
+              </div>
+          </form>
+          </div>
+            <button onclick="logOut()" class="text-center font-bold text-xl underline-offset-2 underline mt-2 text-red-600">Logout
+            </button>
+        </div>
+      </div>
+    </div>
+  </body>
+   <script src="/js/profile.js"></script>
+</html>

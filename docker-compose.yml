@@ -1,0 +1,33 @@
+version: "3"
+services:
+  client:
+    build:
+      context: ./client
+    ports:
+      - "80:80" # Map port 80 on the host to port 80 in the container
+    depends_on:
+      - server
+    networks:
+      - client-server
+
+  server:
+    build:
+      context: ./server
+    ports:
+      - "3000:3000" # Map port 3000 on the host to port 3000 in the container
+    depends_on:
+      - database
+    env_file:
+      - ./server/.env # Include the .env file
+    networks:
+      - client-server
+
+  database:
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - client-server
+
+networks:
+  client-server:
