@@ -1,7 +1,7 @@
 async function getUserInfo() {
   const userId = localStorage.getItem("id");
   const response = await axios.get(
-    "http://localhost:3000/users/profile",
+    "http://localhost:8080/users/profile",
     userId
   );
   const user = response.data.data;
@@ -65,7 +65,7 @@ async function handleTransaction(transactionType) {
     };
 
     const response = await axios.post(
-      `http://localhost:3000/users/${transactionType}`,
+      `http://localhost:8080/users/${transactionType}`,
       user
     );
 
